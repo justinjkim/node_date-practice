@@ -20,3 +20,11 @@ if (now_DS) {
 else {
 	console.log("It is not during Daylight Savings Time.");
 }
+
+var now_leap = moment().isLeapYear();
+if (now_leap) {
+	console.log("It is a leap year.");
+}
+else {
+	console.log("It is not a leap year.");
+}
