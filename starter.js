@@ -1,1 +1,1 @@
-require('moment');
+require('./app/index.js');
