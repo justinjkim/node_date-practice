@@ -1,14 +1,15 @@
 var moment = require('moment');
+const chalk = require('chalk');
+const log = console.log;
 
-moment().format();
-console.log(moment().format()); 
+
 
 var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-console.log("It is " + now);
+log("It is " + chalk.blue(now));
+
 
 var now_day = moment().format("DDDo");
-console.log("It is the " + now_day + " day of the year.");
-
+log("It is the " + chalk.magentaBright(now_day) + " day of the year.");
 
 
 var rightNow = moment();
@@ -16,21 +17,22 @@ var rightNow = moment();
 var startOfDay = moment().clone().startOf('day');
 // Difference in seconds
 var now_seconds = rightNow.diff(startOfDay, 'seconds');
-console.log("It is " + now_seconds + " seconds into the day.");
+log("It is " + chalk.cyanBright(now_seconds) + " seconds into the day.");
 
 
 var now_DS = moment().isDST();
 if (now_DS) {
-	console.log("It is during Daylight Savings Time.");
+	log("It " + chalk.yellowBright("is ") +  "during Daylight Savings Time.");
 }
 else {
 	console.log("It is not during Daylight Savings Time.");
 }
+
 
 var now_leap = moment().isLeapYear();
 if (now_leap) {
 	console.log("It is a leap year.");
 }
 else {
-	console.log("It is not a leap year.");
+	log("It " + chalk.red("is not ") + "a leap year.");
 }
