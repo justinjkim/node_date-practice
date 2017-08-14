@@ -9,7 +9,13 @@ console.log("It is " + now);
 var now_day = moment().format("DDDo");
 console.log("It is the " + now_day + " day of the year.");
 
-var now_seconds = moment().format("SSSSS");
+
+
+var rightNow = moment();
+// midnight
+var startOfDay = moment().clone().startOf('day');
+// Difference in seconds
+var now_seconds = rightNow.diff(startOfDay, 'seconds');
 console.log("It is " + now_seconds + " seconds into the day.");
 
 
